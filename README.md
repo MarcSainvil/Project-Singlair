@@ -75,25 +75,27 @@ In order for your project to be considered `DONE` (passing grade), you should ha
 
 1. Server endpoints are RESTful.
 2. There are endpoints for the following actions:
-    - Retrieve all flight numbers. 
+    - Retrieve all flight numbers.
+        - Should respond with an array of the flight numbers.
     - Retrieve single flight data.
-        - Get all the seats of a specified flight.
+        - Should respond with an array of seating information.
     - Retrieve all reservations. 
         - **_Must work through Insomnia._**
         - **_Having a FE component do this is a stretch goal._**
     - Retrieve a single reservation.
     - Create a reservation.
-        - Needs to modify the `reservations` collection.
-        - Needs to modify the `flights` collection.
+        - Needs to insert a document into the `reservations` collection.
+        - Needs to modify a document in the `flights` collection.
+        - Should respond with the _id the was created.
     - Delete a reservation. 
-        - Needs to modify the `reservations` collection.
-        - Needs to modify the `flights` collection.
+        - Needs to modify or delete a document in the `reservations` collection.
+        - Needs to modify a document in the `flights` collection.
         - **_Must work through Insomnia._**
         - **_Having a FE component do this is a stretch goal._**
     - Update a reservation. 
-        - Needs to modify the `reservations` collection.
-        - Needs to modify the `flights` collection.
-        - **REQUIRED: Change the first name, last name, email, and/or seat number.**
+        - Needs to modify a document in the `reservations` collection.
+        - Needs to modify a document in the `flights` collection.
+        - **REQUIRED: Change the seat number (don't forget to make the old seat available).**
         - **STRETCH: Change the flight number.**
         - **_Must work through Insomnia._**
         - **_Having a FE component do this is a stretch goal._**
@@ -103,8 +105,9 @@ In order for your project to be considered `DONE` (passing grade), you should ha
     - When a request succeeds respond with `the requested data`.
     - When a request fails, respond with `the data that was sent to the server`. _This makes it easier for FE developers to debug their code._
     - When a request does not need any data to be returned, provide a message explaining the status: i.e. "reservation deleted."
+    
+ ```js
 
-```js
 res.status(200).json({ status: 200, data: {}, message: "" });
 ```
 
