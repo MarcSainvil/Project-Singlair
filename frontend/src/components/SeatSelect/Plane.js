@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
+import makeFetchRequest from "../../utils/make-fetch-request";
+import { getSeating } from "../../service/api";
+
 const Plane = ({ setSelectedSeat, selectedFlight }) => {
 
     const [seating, setSeating] = useState([]);
 
     useEffect(() => {
-        // TODO: GET seating data for selected flight
+        // DONE: GET seating data for selected flight
+        (async () => {
+            if (!selectedFlight) return;
+            const res = await makeFetchRequest(() => getSeating(selectedFlight));
+            setSeating(res.data)
+        })();
     }, [selectedFlight]);
 
     return (

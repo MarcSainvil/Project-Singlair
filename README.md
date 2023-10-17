@@ -27,6 +27,14 @@ Looks like you're on your own...
 
 ---
 
+## Setup
+
+Add the `proxy` into the `client`'s `package.json` file:
+
+```json
+    "proxy": "http://localhost:8000"
+```
+
 ### Functionality
 
 - When a user navigates to `http://localhost:3000`, they are presented with a dropdown to select the flight number.
@@ -42,6 +50,8 @@ Looks like you're on your own...
 ## Project Setup
 
 ### The Frontend
+
+> The frontend has already been completed, although the FE will be covered after this project in detail, but my advice is to look inside the service folder in order to create the necessary uri's for your BE!
 
 1. Open a terminal in VS Code
 2. Type `cd frontend`
@@ -75,39 +85,38 @@ In order for your project to be considered `DONE` (passing grade), you should ha
 
 1. Server endpoints are RESTful.
 2. There are endpoints for the following actions:
-    - Retrieve all flight numbers.
-        - Should respond with an array of the flight numbers.
-    - Retrieve single flight data.
-        - Should respond with an array of seating information.
-    - Retrieve all reservations. 
-        - **_Must work through Insomnia._**
-        - **_Having a FE component do this is a stretch goal._**
-    - Retrieve a single reservation.
-    - Create a reservation.
-        - Needs to insert a document into the `reservations` collection.
-        - Needs to modify a document in the `flights` collection.
-        - Should respond with the _id the was created.
-    - Delete a reservation. 
-        - Needs to modify or delete a document in the `reservations` collection.
-        - Needs to modify a document in the `flights` collection.
-        - **_Must work through Insomnia._**
-        - **_Having a FE component do this is a stretch goal._**
-    - Update a reservation. 
-        - Needs to modify a document in the `reservations` collection.
-        - Needs to modify a document in the `flights` collection.
-        - **REQUIRED: Change the seat number (don't forget to make the old seat available).**
-        - **STRETCH: Change the flight number.**
-        - **_Must work through Insomnia._**
-        - **_Having a FE component do this is a stretch goal._**
-3. Server should respond in a _complete_ fashion:
-    - Send the status and the `json` separately.
-    - Send the status in the `json` object as well.
-    - When a request succeeds respond with `the requested data`.
-    - When a request fails, respond with `the data that was sent to the server`. _This makes it easier for FE developers to debug their code._
-    - When a request does not need any data to be returned, provide a message explaining the status: i.e. "reservation deleted."
-    
- ```js
 
+   - Retrieve all flight numbers.
+     - Should respond with an array of the flight numbers.
+   - Retrieve single flight data.
+     - Should respond with an array of seating information.
+   - Retrieve all reservations.
+     - **_Must work through Insomnia._**
+   - Retrieve a single reservation.
+   - Create a reservation.
+     - Needs to insert a document into the `reservations` collection.
+     - Needs to modify a document in the `flights` collection.
+     - Should respond with the \_id that was created.
+   - Delete a reservation.
+     - Needs to modify or delete a document in the `reservations` collection.
+     - Needs to modify a document in the `flights` collection.
+     - **_Must work through Insomnia._**
+   - Update a reservation.
+
+     - Needs to modify a document in the `reservations` collection.
+     - Needs to modify a document in the `flights` collection.
+     - **REQUIRED: Change the seat number (don't forget to make the old seat available).**
+
+     - **_Must work through Insomnia._**
+
+3. Server should respond in a _complete_ fashion:
+   - Send the status and the `json` separately.
+   - Send the status in the `json` object as well.
+   - When a request succeeds respond with `the requested data`.
+   - When a request fails, respond with `the data that was sent to the server`. _This makes it easier for FE developers to debug their code._
+   - When a request does not need any data to be returned, provide a message explaining the status: i.e. "reservation deleted."
+
+```js
 res.status(200).json({ status: 200, data: {}, message: "" });
 ```
 
@@ -115,16 +124,15 @@ res.status(200).json({ status: 200, data: {}, message: "" });
 
 ### Frontend
 
+These are functionalities that will be visible to you once the backend is completed
+
 1. User can select a flight from a dropdown.
 2. User can select an available seat.
 3. User can enter their personal information.
 4. User can view the flight confirmation page after booking a seat.
-    - The confirmation page should `fetch` the details of the reservation from the backend based on it's unique `id`.
+   - The confirmation page should `fetch` the details of the reservation from the backend based on it's unique `id`.
 5. The reservation button in the header should only appear once a reservation has been made.
 6. The reservation page should `fetch` the details of the most recent reservation from the backend based on it's unique `id`.
-    - **Showing multiple reservations is a stretch goal.**
-
-> The frontend is mostly complete, look for the `TODO` comments in the components to figure out what needs to be done!
 
 ---
 
@@ -144,11 +152,4 @@ In order to incorporate the Database, you will need to setup your backend as it 
 }
 ```
 
-### Stretch
 
-- Validate the data being sent to the server.
-- Check if the seat being booked is available (creating / updating a reservation).
-- Create an interface for users to search, update and/or cancel their reservation at `/reservation`.
-- Create an admin interface at `/admin` to view all of the reservation. (The design is up to you.)
-- Even more flights with randomized reserved seats!
-- Any other improvements that you would like to make! Go wild! (like making it less ugly)

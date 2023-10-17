@@ -4,12 +4,19 @@ import { NavLink, Link } from "react-router-dom";
 
 import slingairLogo from "../assets/logo_text.png";
 
+import makeFetchRequest from "../utils/make-fetch-request";
+import { getFlightNumbers } from "../service/api";
+
 const Header = ({ handleChange, reservationId }) => {
 
     const [flightNumbers, setFlightNumbers] = useState([]);
 
     useEffect(() => {
-        // TODO: GET all flight numbers
+        // DONE: GET all flight numbers
+        (async () => {
+            const res = await makeFetchRequest(getFlightNumbers);
+            setFlightNumbers(res.data);
+        })();
     }, []);
 
     return (
@@ -22,14 +29,17 @@ const Header = ({ handleChange, reservationId }) => {
                     Flight Number:
                     <Select onChange={handleChange}>
                         <option value="">Select a flight...</option>
-                        {/* TODO: option for each flight number */}
+                        {/* DONE: option for each flight number */}
+                        {flightNumbers.map(flight => (
+                            <option key={flight} value={flight}>{flight}</option>
+                        ))}
                     </Select>
                 </label>
             </Container>
             <Nav>
                 <>
-                    {/* TODO: only show link if the user has a reservation already */}
-                    <StyledNavLink to="/reservation">Reservation</StyledNavLink>
+                    {/* DONE: only show link if the user has a reservation already */}
+                   { reservationId && <StyledNavLink to="/reservation">Reservation</StyledNavLink>}
                 </>
             </Nav>
         </Wrapper>
