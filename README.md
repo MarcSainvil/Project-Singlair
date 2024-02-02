@@ -54,7 +54,7 @@ This will allow the frontend/client to talk to the backend/server (i.e. send fet
 
 ### The Frontend
 
-> The frontend has already been completed, although the FE will be covered after this project in detail, but my advice is to look inside the service folder in order to create the necessary uri's for your BE!
+> The frontend has already been completed. The FE will be covered after this project in detail (However, we my advise that you to look inside the `service` folder in order to create the necessary uri's for your BE!
 
 1. Open a terminal in VS Code
 2. Type `cd frontend`
