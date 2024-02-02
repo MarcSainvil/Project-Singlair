@@ -45,8 +45,7 @@ This will allow the frontend/client to talk to the backend/server (i.e. send fet
 - When a response with seating is received, display the seating input as well as the form requesting user's information.
 - User selects a seat, enters information and clicks 'Confirm'.
 - Contact the server with the data, and wait for a success response to redirect to the `/confirmation` page.
-- The confirmation page should display a confirmation message to the user with the info that they entered on the previous screen.
-- Consider using `localStorage` to save the reservation id, to allow for retrieval if the user closes and reopens the browser at `/reservation`.
+- After the backend functionality is correctly completed, the confirmation page should display a confirmation message to the user with the info that they entered on the previous screen.
 
 ---
 
@@ -54,7 +53,7 @@ This will allow the frontend/client to talk to the backend/server (i.e. send fet
 
 ### The Frontend
 
-> The frontend has already been completed. The FE will be covered after this project in detail (However, we my advise that you to look inside the `service` folder in order to create the necessary uri's for your BE!
+> The frontend has already been completed. The FE will be covered after this project in detail (However, we my advise that you to look inside the `service` folder in order to know what URLs to give your backend endpoints!
 
 1. Open a terminal in VS Code
 2. Type `cd frontend`
