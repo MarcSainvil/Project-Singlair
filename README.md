@@ -25,6 +25,8 @@ Looks like you're on your own...
 <img src='frontend/src/assets/screenshots/seat-select.png' style='float:left;width:48%;margin-right:4%;' />
 <img src='frontend/src/assets/screenshots/confirmed.png' style='width:48%;' />
 
+(Note: once again, the frontend is strictly for viewing purposes. You do not need to touch any of the React code (though feel free to take a peek as a preview for what's to come!).
+
 ---
 
 ## Setup
@@ -34,6 +36,7 @@ Add the `proxy` into the `client`'s `package.json` file:
 ```json
     "proxy": "http://localhost:8000"
 ```
+This will allow the frontend/client to talk to the backend/server (i.e. send fetch requests to Express endpoints!)
 
 ### Functionality
 
