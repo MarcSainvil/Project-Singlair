@@ -28,7 +28,7 @@ express()
     // Nothing to modify above or below this line
     // ---------------------------------
     
-    .get("/api/get-flights", getFlights)
+    .get("/api/get-flights/", getFlights)
     .get("/api/get-flight/:flight", getFlight)
     .get("/api/get-reservations", getReservations)
     .get("/api/get-reservation/:reservation", getSingleReservation)

@@ -14,6 +14,7 @@ const Plane = ({ setSelectedSeat, selectedFlight }) => {
             if (!selectedFlight) return;
             const res = await makeFetchRequest(() => getSeating(selectedFlight));
             setSeating(res.data)
+            
         })();
     }, [selectedFlight]);
 

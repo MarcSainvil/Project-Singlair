@@ -1,6 +1,7 @@
+
 export const getFlightNumbers = async () => {
-  const res = await fetch("/api/get-flights");
-  return await res.json();
+  const res = await fetch("/api/get-flights/");
+  return  await res.json();
 };
 
 export const getSeating = async (flightNumber) => {

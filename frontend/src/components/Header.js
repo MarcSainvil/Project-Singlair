@@ -30,9 +30,9 @@ const Header = ({ handleChange, reservationId }) => {
                     <Select onChange={handleChange}>
                         <option value="">Select a flight...</option>
                         {/* DONE: option for each flight number */}
-                        {flightNumbers.map(flight => (
-                            <option key={flight} value={flight}>{flight}</option>
-                        ))}
+                        {flightNumbers.length > 0 && flightNumbers.map(flight => (
+    <option key={flight} value={flight}>{flight}</option>
+))}
                     </Select>
                 </label>
             </Container>
